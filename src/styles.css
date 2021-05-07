@@ -18,3 +18,43 @@ body {
    */
   background-image: url('./images/bg-pattern.png');
 }
+
+.search-form {
+  display: flex;
+  justify-content: center;
+
+  margin: 20px auto;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid darkgray;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 17px;
+  background-color: darkgray;
+  color: #fff;
+}
+.btn {
+  /* display: none; */
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: darkgray;
+  color: #fff;
+}
+
+/* .btn .is-active{
+  display: flex
+} */
