@@ -1,7 +1,7 @@
 import refs from './js/markup/refs';
 import ImageApiService from './js/api/apiService';
 import galleryList from './templates/gallery-items.hbs';
-import '../node_modules/material-design-icons/iconfont/material-icons.css';
+import 'material-design-icons/iconfont/material-icons.css';
 import './styles.css';
 
 refs.searchForm.addEventListener('submit', onSearch);
@@ -14,7 +14,7 @@ function onSearch(e) {
   imageApiService.query = e.currentTarget.elements.query.value;
 
   if (!imageApiService.query) {
-    return console.log('Bad Request');
+    return alert('Bad Request');
   }
 
   imageApiService.resetPage();
@@ -26,8 +26,12 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  imageApiService.fetchApiService().then(appendImagesMarkup);
+  imageApiService.fetchApiService().then(images => {
+    appendImagesMarkup(images);
+    scrollToNewImages();
+  });
 }
+
 function appendImagesMarkup(images) {
   refs.galleryListContainer.insertAdjacentHTML(
     'beforeend',
@@ -41,4 +45,11 @@ function clearImageContainer() {
 
 function showLoadMoreBtn() {
   refs.loadMoreBtn.classList.add('is-active');
+}
+
+function scrollToNewImages() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
 }
