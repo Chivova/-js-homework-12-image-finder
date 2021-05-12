@@ -1,10 +1,11 @@
-import refs from './js/markup/refs';
+import refs from './js/components/refs';
 import ImageApiService from './js/api/apiService';
 import errorNotify from './js/utils/notify';
 import galleryList from './templates/gallery-items.hbs';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles.css';
-import onImgClick from './js/utils/modal';
+
+import onImgClick from './js/components/modal';
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);

@@ -78,10 +78,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* .gallery-item {
-  flex-basis: calc((100% - 4 * 30px) / 4);
-  margin: 15px;
-} */
 .gallery-item {
   height: auto;
   overflow: hidden;
@@ -94,10 +90,20 @@ body {
   object-fit: cover;
 }
 
+.photo-card {
+  position: relative;
+}
+
 .stats {
+  position: absolute;
+  bottom: -10px;
+  left: 3px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  color: #e8e8e8;
 }
 
 .stats-item {
@@ -106,5 +112,9 @@ body {
 }
 
 .material-icons {
-  margin-right: 7px;
+  margin-right: 5px;
+}
+
+.material-icons-text {
+  margin-right: 4px;
 }
