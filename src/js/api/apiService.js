@@ -13,7 +13,6 @@ export default class imageApiService {
     )
       .then(response => response.json())
       .then(({ hits }) => {
-        if (hits.length === 0) return alert('NO');
         this.page += 1;
 
         return hits;
