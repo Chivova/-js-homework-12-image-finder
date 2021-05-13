@@ -1,11 +1,10 @@
 import refs from './js/components/refs';
 import ImageApiService from './js/api/apiService';
+import onImgClick from './js/components/modal';
 import errorNotify from './js/utils/notify';
 import galleryList from './templates/gallery-items.hbs';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles.css';
-
-import onImgClick from './js/components/modal';
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
@@ -54,7 +53,7 @@ function showLoadMoreBtn() {
 
 function scrollToNewImages() {
   window.scrollTo({
-    top: document.body.scrollHeight,
+    top: document.body.scrollHeight - 920,
     behavior: 'smooth',
   });
 }
