@@ -31,8 +31,10 @@ function onSearch(e) {
 
 function onLoadMore() {
   imageApiService.fetchApiService().then(images => {
+    // const scrollToY = refs.galleryListContainer.offsetTop + refs.galleryListContainer.clientHeight;
     appendImagesMarkup(images);
     scrollToNewImages();
+    // onScrollToNewImages(scrollToY);
   });
 }
 
@@ -57,3 +59,10 @@ function scrollToNewImages() {
     behavior: 'smooth',
   });
 }
+
+// function onScrollToNewImages(target) {
+//    window.scrollTo({
+//      top: target,
+//      behavior: 'smooth',
+//    });
+// }
